@@ -1,4 +1,38 @@
-<div class="p-6 space-y-6">
+<div class="max-w-6xl mx-auto p-6">
   <app-task-form></app-task-form>
-  <app-task-list></app-task-list>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+    <div class="bg-slate-100 p-4 rounded-lg">
+      <h2 class="font-bold mb-4">Para fazer</h2>
+      <div class="space-y-3">
+        @for (t of taskService.tasks(); track t.id) {
+          @if (t.status === 'Para fazer') {
+            <app-task-card [task]="t" (click)="taskService.move(t.id, 'Em andamento')"></app-task-card>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="bg-slate-100 p-4 rounded-lg">
+      <h2 class="font-bold mb-4">Em andamento</h2>
+      <div class="space-y-3">
+        @for (t of taskService.tasks(); track t.id) {
+          @if (t.status === 'Em andamento') {
+            <app-task-card [task]="t" (click)="taskService.move(t.id, 'Concluídas')"></app-task-card>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="bg-slate-100 p-4 rounded-lg">
+      <h2 class="font-bold mb-4">Concluídas</h2>
+      <div class="space-y-3">
+        @for (t of taskService.tasks(); track t.id) {
+          @if (t.status === 'Concluídas') {
+            <app-task-card [task]="t"></app-task-card>
+          }
+        }
+      </div>
+    </div>
+  </div>
 </div>

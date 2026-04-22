@@ -4,9 +4,9 @@ export interface Task {
   id: string;
   title: string;
   due: string;
-  level: 'low' | 'medium' | 'high';
+  level: 'baixo' | 'medio' | 'alto';
   desc?: string;
-  status: 'todo' | 'doing' | 'done';
+  status: 'Para fazer' | 'Em andamento' | 'Concluídas';
 }
 
 function uid() {
@@ -30,25 +30,25 @@ export class TaskService {
         id: uid(),
         title: 'Ler capítulo 3',
         due: addDays(2),
-        level: 'high',
+        level: 'alto',
         desc: 'Exercícios',
-        status: 'todo'
+        status: 'Para fazer'
       },
       {
         id: uid(),
         title: 'Lista TS',
         due: addDays(5),
-        level: 'medium',
+        level: 'medio',
         desc: 'Generics',
-        status: 'doing'
+        status: 'Em andamento'
       },
       {
         id: uid(),
         title: 'Revisão HTML',
         due: addDays(10),
-        level: 'low',
+        level: 'baixo',
         desc: '',
-        status: 'done'
+        status: 'Concluídas'
       }
     ];
   }

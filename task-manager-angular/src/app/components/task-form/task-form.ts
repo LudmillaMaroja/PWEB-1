@@ -14,7 +14,7 @@ export class TaskForm {
 
   title = '';
   due = '';
-  level: 'low' | 'medium' | 'high' = 'low';
+  level: 'baixo' | 'medio' | 'alto' = 'baixo';
   desc = '';
 
   submit() {
@@ -25,7 +25,7 @@ export class TaskForm {
       due: this.due,
       level: this.level,
       desc: this.desc,
-      status: 'todo'
+      status: 'Para fazer'
     });
 
     this.title = '';
