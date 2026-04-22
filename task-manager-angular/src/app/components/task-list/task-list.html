@@ -1,0 +1,33 @@
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+  <div>
+    <h2 class="font-bold mb-2">Para fazer</h2>
+
+    <app-task-card
+      *ngFor="let t of tasks().filter(x => x.status === 'todo')"
+      [task]="t">
+    </app-task-card>
+
+  </div>
+
+  <div>
+    <h2 class="font-bold mb-2">Em andamento</h2>
+
+    <app-task-card
+      *ngFor="let t of tasks().filter(x => x.status === 'doing')"
+      [task]="t">
+    </app-task-card>
+
+  </div>
+
+  <div>
+    <h2 class="font-bold mb-2">Concluído</h2>
+
+    <app-task-card
+      *ngFor="let t of tasks().filter(x => x.status === 'done')"
+      [task]="t">
+    </app-task-card>
+
+  </div>
+
+</div>

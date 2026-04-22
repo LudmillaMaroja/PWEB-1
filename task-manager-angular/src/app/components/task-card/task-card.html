@@ -1,0 +1,23 @@
+<div class="p-3 border rounded bg-white shadow-sm mb-3">
+
+  <div class="flex justify-between">
+    <strong>{{ task.title }}</strong>
+
+    <button (click)="delete()" class="text-red-500 text-sm">
+      excluir
+    </button>
+  </div>
+
+  <p class="text-sm text-gray-600">{{ task.desc }}</p>
+
+  <div class="text-xs mt-2">
+    {{ task.due }} • {{ task.level }}
+  </div>
+
+  <div class="flex gap-2 mt-2">
+    <button (click)="move('todo')">Todo</button>
+    <button (click)="move('doing')">Doing</button>
+    <button (click)="move('done')">Done</button>
+  </div>
+
+</div>

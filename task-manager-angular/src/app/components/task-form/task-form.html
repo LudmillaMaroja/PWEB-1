@@ -1,0 +1,27 @@
+<form (ngSubmit)="submit()" class="grid gap-2 p-3 bg-white rounded shadow">
+
+  <input [(ngModel)]="title" name="title"
+         placeholder="Título"
+         class="border p-2 rounded"/>
+
+  <input [(ngModel)]="due" name="due"
+         type="date"
+         class="border p-2 rounded"/>
+
+  <select [(ngModel)]="level" name="level"
+          class="border p-2 rounded">
+
+    <option value="low">Baixo</option>
+    <option value="medium">Médio</option>
+    <option value="high">Alto</option>
+
+  </select>
+
+  <textarea [(ngModel)]="desc" name="desc"
+            class="border p-2 rounded"></textarea>
+
+  <button class="bg-indigo-600 text-white p-2 rounded">
+    Salvar
+  </button>
+
+</form>

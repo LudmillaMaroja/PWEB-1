@@ -1,2 +1,15 @@
-node_modules
-build
+# Dependências
+/node_modules
+
+# Cache do Angular e Build
+/.angular
+/dist
+/tmp
+
+# IDEs (VS Code, WebStorm)
+/.vscode
+/.idea
+
+# Logs
+npm-debug.log
+yarn-error.log
